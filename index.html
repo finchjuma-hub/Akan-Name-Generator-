@@ -8,14 +8,22 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+
+    <!-- Title and description -->
+     <header>
+        <h1>Akan Name Generator</h1>
+        <p>This web application lets users discover their traditional Akan nae by calculating the day of the week they were born and matching it with their gender. Rooted in Ghanaian culture, Akan names reflect both identity and heritage. The web application offers an engaging way to explore cultural naming traditions through a clean, interactive interface</p>
+     </header>
+     
+    <section class="form">
     <!-- Akan input form -->
      <h2></h2>
      <p>Enter you birthdate and select your gender to discover your Akan name</p>
 
      <form id="nameForm">
         <!-- Birthday -->
-         <label for="birthdate">Birthdate:</label>
-         <input type="date" id="birthdate" name="birthdate" required><br><br>
+         <label for="birthdate">Birthdate (DD/MM/YYYY):</label>
+         <input type="text" id="birthdate" name="birthdate" placeholder="e.g 30/01/2000" required><br><br>
 
          <!-- Gender -->
          <label for="gender">Gender:</label><br> 
@@ -32,6 +40,7 @@
          <div id="result"></div>
 
      </form>
+    </section> 
     <script src="script.js"></script>
 </body>
 </html>
