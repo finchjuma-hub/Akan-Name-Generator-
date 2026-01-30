@@ -8,6 +8,26 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <!-- Akan input form -->
+     <h2></h2>
+     <p>Enter you birthdate and select your gender to discover your Akan name</p>
+
+     <form id="nameForm">
+        <!-- Birthday -->
+         <label for="birthdate">Birthdate:</label>
+         <select id="gender" name="gender" required>
+            <option value="">--Select--</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+         </select>
+
+        <!-- Button -->
+          <button type="submit">Get name</button>
+
+        <!-- Result -->
+         <div id="result"></div>
+
+     </form>
     <script src="script.js"></script>
 </body>
 </html>
