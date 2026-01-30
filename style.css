@@ -40,3 +40,27 @@ button:hover{
     font-size: 18px;
     color: #333;
 }
+
+/* Header styling */
+header{
+    text-align: center;
+    margin: 40px auto 20px auto;
+    max-width: 600px;
+    padding: 20px;
+}
+
+/* Title */
+header h1{
+    font-size: 20px;
+    color:#333;
+    margin-bottom: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Description */
+header p{
+    font-size: 16px;
+    color: #000;
+    margin: 0 auto;
+    font-family: 'Times New Roman', Times, serif;
+}
