@@ -1,5 +1,5 @@
 /* form styling */
-form{
+.form{
     max-width: 400px;
     margin: 30px auto;
     padding: 20px;
@@ -8,12 +8,12 @@ form{
     border-radius: 10px;
     box-shadow: 0 4px 8px #000;
 }
-form h2{
+.form h2{
     text-align: center;
     color: #333;
     margin-bottom: 10px;
 }
-form p{
+.form p{
     text-align: center;
     color: #555;
     font-size: 14px;
