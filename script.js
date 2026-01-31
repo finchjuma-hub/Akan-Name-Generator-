@@ -26,3 +26,7 @@ const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'
 const dayName = days[dateObj.getDay()];
 
 const maleNames = ['Kwasi','Kwadwo','Kwabena','Kwaku','Yaw','Kofi','Kwame'];
+const femaleNames = ['Akosua','Adwoa','Abenaa','Akua','Yaa','Afua','Ama'];
+let akanName = '';
+if (gender === 'male') akanName = maleNames[dateObj.getDay()];
+else if (gender === 'female') akanName =femaleNames[dateObj.getDay()];
