@@ -10,11 +10,13 @@
 <body>
 
     <!-- Title and description -->
+     <section class="header">
      <header>
         <h1>Akan Name Generator</h1>
 
         <p>This web application lets users discover their traditional Akan nae by calculating the day of the week they were born and matching it with their gender. Rooted in Ghanaian culture, Akan names reflect both identity and heritage. The web application offers an engaging way to explore cultural naming traditions through a clean, interactive interface</p>
      </header>
+     </section>
 
      <hr>
 
@@ -29,9 +31,10 @@
           <input type="text" id="birthdate" name="birthdate" placeholder="e.g 30/01/2000" required><br><br>
 
           <!-- Gender -->
-          <label for="gender">Gender:</label><br> 
+          <label for="gender">Gender:</label>
           <select id="gender" name="gender" required>
-              <option value="">Select</option>
+
+              <option>Select</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
           </select><br><br>
@@ -40,14 +43,16 @@
             <button type="submit">Get name</button>
 
           <!-- Result -->
-          <div id="result"></div>
+          <div id="result" class="result"></div>
 
         </form>
     </section> 
 
     <footer>
         <p>2026 Akan Name Generator | Built by Finch</p>
+        <p><em>"A good name is better thanriches."</em></p>
     </footer>
+    
     <script src="script.js"></script>
 </body>
 </html>
