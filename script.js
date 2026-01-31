@@ -30,3 +30,12 @@ const femaleNames = ['Akosua','Adwoa','Abenaa','Akua','Yaa','Afua','Ama'];
 let akanName = '';
 if (gender === 'male') akanName = maleNames[dateObj.getDay()];
 else if (gender === 'female') akanName =femaleNames[dateObj.getDay()];
+
+const result = document.getElementById('result');
+result.innerHTML =`
+  <strong>Your Akan name:</strong> ${akanName}
+  <em>You were born on ${dayName}, ${meanings[dateObj.getDay()]}</em>
+  <button onclick="shareName('${akanName}')">Share your Akan name</button>`;
+result.classList.add('show');
+  
+  
