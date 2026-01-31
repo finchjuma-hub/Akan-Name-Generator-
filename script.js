@@ -42,7 +42,7 @@ result.innerHTML =`
 result.classList.add('show');
 
 
-function share Name(name) {
+function shareName(name) {
     const text = `My Akan name is ${nsme}! Discover yours at the Akan Name Generator.`;
     if (navigator.share) {
         navigator.share({text});
