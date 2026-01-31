@@ -29,8 +29,13 @@ label{
 }
 
 /* Button */
+button{
+    font-family: 'Times New Roman', Times, serif;
+    color: #000;
+}
+
 button:hover{
-    background-color: #fff;
+    background-color: gold;
 }
 
 /* Result */
@@ -51,7 +56,7 @@ header{
 
 /* Title */
 header h1{
-    font-size: 20px;
+    font-size: 50px;
     color:#333;
     margin-bottom: 10px;
     font-family: 'Times New Roman', Times, serif;
