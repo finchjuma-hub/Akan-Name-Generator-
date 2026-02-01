@@ -37,7 +37,7 @@ Scenario 3: User does not select a gender
             And the form is submitted
             The app displays:
 
-            "Please select a gender"
+            "Please select an item in the list."
 
 
 ## Technologies Used
