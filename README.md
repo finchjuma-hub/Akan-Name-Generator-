@@ -18,24 +18,24 @@ Ensure "style.css" and "script.js" are linked correctly.
 
 ## BDD(Behavior-Driven Development)
 Scenario 1: User enters a valid date and selects gender
-            The user inputs '14/01/2006' and selects 'Male'
-            Then the form is submitted
-            The display will be:
+            then inputs '14/01/2006' and selects 'Male'
+            and submitts the form,
+            the display will be:
 
             "You were born on Saturday."
             "Your Akan name is Kwame."
 
 Scenario 2: User enters an invalid date 
-            The user inputs an impossible date (e.g. 31/02/2020)
-            And the form is submitted
-            The app displays and alert:
+            then inputs an impossible date (e.g. 34/01/2020)
+            and the form is submitted
+            the app will display:
 
             "Please enter a valid date."
 
 Scenario 3: User does not select a gender
-            The user leaves gender blank
-            And the form is submitted
-            The app displays:
+            the user leaves gender blank
+            and the form is submitted
+            the app displays:
 
             "Please select an item in the list."
 
