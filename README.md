@@ -47,6 +47,7 @@ JavaScript for validation, calculation, and result display
 
 ## Contact information
 Email: finchjuma7@gmail.com
+Phone Numer: +245 741 406 431
 
 ## License and Copyright information
 This project is licensed under the MIT License.
