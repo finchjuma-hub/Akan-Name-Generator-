@@ -1,56 +1,67 @@
-const birthdate = document.getElementById('birthdate');
-const gender = document.getElementById('gender');
+ document.getElementById("nameForm").addEventListener("submit", function (e) {
+    e.preventDefault();
 
-if (!birthdate || !gender){
-    alert("Please enter a validbirthdate and select a gender.");
-    return;
-}
+    const birthdate = document.getElementById("birthdate").value;
+    const gender = document.getElementById("gender").value;
+    const result = document.getElementById("result");
 
-const dateParts = birthdate.split('/');
-if (dateParts.length !== 3) {
-    alert("Please use the formatDD/MM/YYYY.");
-    return;
-}
-
-const day = parseInt(dateParts[0]);
-const month = parseInt(dateParts[1]);
-const year = parseInt(dateParts[2]);
-
-if (day < 1 || day > 31 || month < 1 || month > 12 || isNaN(year)) {
-    alert("Please enter a valid date.");
-    return;
-}
-
-
-const dateObj = new Date(`${month}/${day}/${year}`);
-const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-const dayName = days[dateObj.getDay()];
-
-
-const maleNames = ['Kwasi','Kwadwo','Kwabena','Kwaku','Yaw','Kofi','Kwame'];
-const femaleNames = ['Akosua','Adwoa','Abenaa','Akua','Yaa','Afua','Ama'];
-let akanName = '';
-if (gender === 'male') akanName = maleNames[dateObj.getDay()];
-else if (gender === 'female') akanName =femaleNames[dateObj.getDay()];
-
-
-const result = document.getElementById('result');
-result.innerHTML =`
-  <strong>Your Akan name:</strong> ${akanName}
-  <em>You were born on ${dayName}, ${meanings[dateObj.getDay()]}</em>
-  <button onclick="shareName('${akanName}')">Share your Akan name</button>`;
-result.classList.add('show');
-
-
-function shareName(name) {
-    const text = `My Akan name is ${nsme}! Discover yours at the Akan Name Generator.`;
-    if (navigator.share) {
-        navigator.share({text});
-    } else{
-        alert("Copied: " + text);
+    if (!birthdate || !gender) {
+        result.innerHTML = "Please enter a valid birthdate and select a gender.";
+        return;
     }
-}
 
+    const dateParts = birthdate.split("/");
+    if (dateParts.length !== 3) {
+        result.innerHTML = "Please use the format DD/MM/YYYY.";
+        return;
+    }
 
+    let DD = parseInt(dateParts[0]);
+    let MM = parseInt(dateParts[1]);
+    let YYYY = parseInt(dateParts[2]);
 
-  
+    if (
+        isNaN(DD) ||
+        isNaN(MM) ||
+        isNaN(YYYY) ||
+        MM < 1 ||
+        MM > 12 ||
+        DD < 1 ||
+        DD > 31
+    ) {
+        result.innerHTML = "Please enter a valid date.";
+        return;
+    }
+
+    if (MM < 3) {
+        MM += 12;
+        YYYY -= 1;
+    }
+
+    const CC = Math.floor(YYYY / 100);
+    const YY = YYYY % 100;
+
+    let d = Math.floor(
+        (CC / 4 - 2 * CC - 1 + (5 * YY) / 4 + (26 * (MM + 1)) / 10 + DD)
+    ) % 7;
+
+    if (d < 0) {
+        d += 7;
+    }
+
+    const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const maleNames = ["Kwasi","Kwadwo","Kwabena","Kwaku","Yaw","Kofi","Kwame"];
+    const femaleNames = ["Akosua","Adwoa","Abenaa","Akua","Yaa","Afua","Ama"];
+
+    let akanName;
+
+    if (gender === "male") {
+        akanName = maleNames[d];
+    } else if (gender === "female") {
+        akanName = femaleNames[d];
+    }
+
+    result.innerHTML = `<p>You were born on <strong>${days[d]}</strong>, your Akan name is <strong>${akanName}</strong>.</p>`;
+    result.classList.add("show");
+});
+
